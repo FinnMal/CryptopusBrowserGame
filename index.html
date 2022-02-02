@@ -1,6 +1,8 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="assets/css/index.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
     <script src="https://unpkg.com/@pixi/sound/dist/pixi-sound.js"></script>
     <script src="assets/js/hover_effect.js"></script>
@@ -24,75 +26,6 @@
     <script src="https://kit.fontawesome.com/5962d23c47.js" crossorigin="anonymous"></script>
 
     <title>Cryptopus Browser Game</title>
-
-    <style>
-        @import url("https://db.onlinewebfonts.com/c/a1caf164c402a3fc938700d04f021d6d?family=Riffic+Free");
-
-        @font-face {
-            font-family: "Riffic Free";
-            src: url("https://db.onlinewebfonts.com/t/a1caf164c402a3fc938700d04f021d6d.eot");
-            src: url("https://db.onlinewebfonts.com/t/a1caf164c402a3fc938700d04f021d6d.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/a1caf164c402a3fc938700d04f021d6d.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/a1caf164c402a3fc938700d04f021d6d.woff") format("woff"), url("//db.onlinewebfonts.com/t/a1caf164c402a3fc938700d04f021d6d.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/a1caf164c402a3fc938700d04f021d6d.svg#Riffic Free") format("svg");
-        }
-
-        html {
-            display: flex;
-            background-color: #0D0851 !important;
-            justify-content: center;
-        }
-
-        body {
-            padding: 0px;
-            margin: 0px;
-            font-family: 'Riffic Free';
-            display: flex;
-            gap: 0px;
-
-            justify-content: center;
-            height: auto;
-
-            flex-wrap: wrap;
-            padding-top: 50px;
-
-            height: fit-content;
-            margin-left: 15px;
-            margin-right: 15px;
-            width: 1200px;
-        }
-
-        canvas {
-            max-width: 1200px;
-            max-height: min(720px, 100vh);
-            margin-top: 50px;
-
-            width: 100%;
-            height: auto;
-        }
-
-        .header {
-            width: 100%;
-            max-width: 1200px;
-        }
-
-        .btn-back {
-            color: white;
-            font-size: 40px;
-            margin-bottom: 0px;
-            padding-bottom: 0px;
-            text-decoration: none !important;
-        }
-
-        .btn-back>.fas {
-            display: none;
-        }
-
-        .btn-back:hover>.fas {
-            display: unset;
-        }
-
-        .btn-back:hover>.far {
-            display: none !important;
-        }
-    </style>
 </head>
 
 <body>
@@ -103,8 +36,6 @@
         </a>
     </div>
     <script>
-        let state
-        const OCTOPUS_IMAGE = 'assets/images/Cryptopus%202.png'
         const VIEW_WIDTH = 1280
         const VIEW_HEIGHT = 720
 
@@ -146,8 +77,11 @@
         let sound = new Sound()
         let loader = NaN
         let container = NaN
+
+        // load and start the game
         window.onload = function () {
             loader = new PIXI.Loader()
+
             // load text files
             loader.add('Riffic Free', './assets/fonts/RifficFree-Bold.ttf');
 
@@ -164,20 +98,28 @@
             loader.load((l, resources) => {
                 loader = l
                 sound.setResources(resources)
+
+                // start background music
                 sound.loop(SOUND_SOUNDTRACK)
+
                 app = new PIXI.Application({
                     width: VIEW_WIDTH, height: VIEW_HEIGHT, antialias: true
                 });
                 document.body.appendChild(app.view);
+
+                // add container to do zIndex
                 container = new PIXI.Container();
                 container.sortableChildren = true
                 app.stage.addChild(container);
+
+                // load the homescreen
                 screens = new Screens()
                 screens.loadScreen(SCREEN_HOME)
                 app.ticker.add((delta) => screens.loop(delta));
             })
         }
 
+        // resize game windows, to fit screen size
         window.addEventListener('resize', function () {
             if (document.body.clientHeight < 817) {
                 let max_width = 1200 - (850 - document.body.clientHeight) * 1.7
@@ -186,17 +128,6 @@
             else
                 document.body.style = '';
         })
-
-
-        function gameLoop(delta) {
-            // octopus.loop(delta);
-        }
-
-        function play(delta) {
-            octopus.x += octopus.vx;
-            octopus.y += octopus.vy;
-        }
-
     </script>
 </body>
 

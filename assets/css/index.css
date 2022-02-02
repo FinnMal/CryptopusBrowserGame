@@ -1,0 +1,66 @@
+@import url("https://db.onlinewebfonts.com/c/a1caf164c402a3fc938700d04f021d6d?family=Riffic+Free");
+
+@font-face {
+    font-family: "Riffic Free";
+    src: url("https://db.onlinewebfonts.com/t/a1caf164c402a3fc938700d04f021d6d.eot");
+    src: url("https://db.onlinewebfonts.com/t/a1caf164c402a3fc938700d04f021d6d.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/a1caf164c402a3fc938700d04f021d6d.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/a1caf164c402a3fc938700d04f021d6d.woff") format("woff"), url("//db.onlinewebfonts.com/t/a1caf164c402a3fc938700d04f021d6d.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/a1caf164c402a3fc938700d04f021d6d.svg#Riffic Free") format("svg");
+}
+
+html {
+    display: flex;
+    background-color: #0D0851 !important;
+    justify-content: center;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Riffic Free';
+    display: flex;
+    gap: 0px;
+
+    justify-content: center;
+    height: auto;
+
+    flex-wrap: wrap;
+    padding-top: 50px;
+
+    height: fit-content;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 1200px;
+}
+
+canvas {
+    max-width: 1200px;
+    max-height: min(720px, 100vh);
+    margin-top: 50px;
+
+    width: 100%;
+    height: auto;
+}
+
+.header {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.btn-back {
+    color: white;
+    font-size: 40px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    text-decoration: none !important;
+}
+
+.btn-back>.fas {
+    display: none;
+}
+
+.btn-back:hover>.fas {
+    display: unset;
+}
+
+.btn-back:hover>.far {
+    display: none !important;
+}
