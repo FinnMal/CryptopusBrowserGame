@@ -1,0 +1,7 @@
+class Animations {
+    constructor(){
+
+    }
+
+    load()
+}
