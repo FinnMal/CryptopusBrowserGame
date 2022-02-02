@@ -38,12 +38,6 @@ class LevelCollectStars {
         ele.render()
         this.octopus.setCatchedElement(ele)
 
-        // countdown
-        /*
-        this.countdown.render()
-        this.countdown.start()
-        */
-
         this.running = true
     }
 

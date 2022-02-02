@@ -75,12 +75,6 @@ class ResultBoard {
         this.overview_btn = new Button(BUTTON_OVERVIEW, () => this.game.showOverview(false))
         this.overview_btn.render(btn_x + 105, btn_y)
         this.overview_btn.setScale(RESULT_BOARD_BUTTON_SCALE, RESULT_BOARD_BUTTON_SCALE)
-
-        /*
-        this.next_btn = new Button(BUTTON_NEXT, () => this.game.startNextGame())
-        this.next_btn.render(btn_x + 208, btn_y)
-        this.next_btn.setScale(RESULT_BOARD_BUTTON_SCALE, RESULT_BOARD_BUTTON_SCALE)
-        */
     }
 
     unmount() {

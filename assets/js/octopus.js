@@ -82,7 +82,6 @@ class Octopus {
         }
 
         this.space.press = () => this.beginJump()
-        /* this.space.release = () => this.endJump()*/
 
         for (let i = 0; i < this.direction_config['keys'].length; i++) {
             const keys = this.direction_config['keys'][i]
@@ -129,17 +128,6 @@ class Octopus {
         this.removeCatchedElement()
         this.resetMaxJumpYPos()
         this.resetMinJumpYPos()
-
-
-        /*
-        this.space.unsubscribe()
-        for (let i = 0; i < this.direction_config['keys'].length; i++) {
-            const keys = this.direction_config['keys'][i]
-            keys.forEach(function (key) {
-                key.unsubscribe()
-            }.bind(this))
-        }
-        */
     }
 
     getFramesWithRandomBegin(frames) {
@@ -334,11 +322,6 @@ class Octopus {
                 this.jump_started_at = this.sprite.y
                 this.sprite.vy = JUMP_SPEED * (-1)
                 this.jump_distance_traveled = 0
-                /*
-                this.jump_to = Math.round(this.getY() - JUMP_HEIGHT)
-                if (this.jump_to < MAX_JUMP_Y_POS)
-                    this.jump_to = MAX_JUMP_Y_POS
-                */
             }
         }
     }
@@ -369,14 +352,6 @@ class Octopus {
 
     setRockYPos(y_pos) {
         this.rock_y_pos = y_pos
-
-        /*if (this.first_line) this.first_line.destroy()
-        this.first_line = new PIXI.Graphics();
-        this.first_line.zIndex = 10
-        this.first_line.lineStyle(1, '0xFFFF00');
-        this.first_line.drawRect(0, y_pos, VIEW_WIDTH, 1)
-        container.addChild(this.first_line)
-        */
     }
 
     resetRockYPos() {
@@ -412,7 +387,6 @@ class Octopus {
 
             // fixes bug in game 1
             if (this.control_type == CONTROLTYPE_ALL && !this.canMove(DIRECTION_UP)) {
-                console.log('ending jump')
                 this.endJump()
             }
 

@@ -52,7 +52,6 @@ class HomeScreen {
             this.logo = new PIXI.Sprite(new PIXI.Texture.from(LOGO_IMAGE))
             this.logo.y = 100;
             this.logo.x = 230;
-            /*this.logo.scale.set(0.2, 0.2);*/
             container.addChild(this.logo);
 
             // game start button
@@ -76,20 +75,6 @@ class HomeScreen {
 
         if (id == SCREEN_OCTOPUS_SELECT) {
             this.renderAnimatedBackgroundSprite()
-
-            /*
-            var video = document.createElement('video');
-            video.preload = false;
-            video.loop = true;
-            video.src = BACKGROUND_VIDEO;
-
-            var texture = PIXI.Texture.from(video);
-            var videoSprite = new PIXI.Sprite(texture);
-            videoSprite.alpha = 0.4;
-            videoSprite.width = VIEW_WIDTH;
-            videoSprite.height = VIEW_HEIGHT;
-            container.addChild(videoSprite);
-            */
 
             setTimeout(function () {
                 this.background_img.destroy();

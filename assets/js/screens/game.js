@@ -88,11 +88,6 @@ class GameScreen {
         this.overview_btn = new Button(BUTTON_OVERVIEW, () => this.showOverview())
         this.overview_btn.render(btn_x + 60, btn_y)
 
-        /*
-        this.next_btn = new Button(BUTTON_NEXT, () => this.startNextGame())
-        this.next_btn.render(btn_x + 120, btn_y)
-        */
-
         // render point tracker
         let tracker_x = VIEW_WIDTH * 0.845
         let tracker_y = 30
@@ -183,19 +178,6 @@ class GameScreen {
     }
 
     getItemSpawnXPos() {
-        /*let x_pos = this.getRandomInRange(FALLING_ELEMENT_MARGIN_LEFT, VIEW_WIDTH - FALLING_ELEMENT_MARGIN_RIGHT)
-        let line = new PIXI.Graphics();
-        line.zIndex = 10
-        line.lineStyle(1, '0xFFFF00');
-        line.drawRect(FALLING_ELEMENT_MARGIN_LEFT, 0, 1, VIEW_HEIGHT)
-        container.addChild(line)
-
-        line = new PIXI.Graphics();
-        line.zIndex = 10
-        line.lineStyle(1, '0xFFFF00');
-        line.drawRect(VIEW_WIDTH - FALLING_ELEMENT_MARGIN_RIGHT, 0, 1, VIEW_HEIGHT)
-        container.addChild(line)
-        */
         return this.getRandomInRange(FALLING_ELEMENT_MARGIN_LEFT, VIEW_WIDTH - FALLING_ELEMENT_MARGIN_RIGHT)
     }
 }

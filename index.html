@@ -174,19 +174,13 @@
                 app.stage.addChild(container);
                 screens = new Screens()
                 screens.loadScreen(SCREEN_HOME)
-                /*screens.loadScreen(SCREEN_GAME, {
-                    level_id: 2,
-                    octopus: new Octopus(OCTOPUS_YELLOW, false)
-                })*/
                 app.ticker.add((delta) => screens.loop(delta));
             })
         }
 
         window.addEventListener('resize', function () {
-            console.log(document.body.clientHeight)
             if (document.body.clientHeight < 817) {
                 let max_width = 1200 - (850 - document.body.clientHeight) * 1.7
-                console.log('MAX WIDTH: ' + max_width)
                 document.body.style = 'max-width: ' + max_width + 'px;';
             }
             else
